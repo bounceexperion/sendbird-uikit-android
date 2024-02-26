@@ -14,7 +14,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.sendbird'
                 artifactId = 'sendbird-android-app'
-                version = 'v1.0.0'
+                version = 'v3.13.0'
             }
         }
     }
