@@ -1,5 +1,9 @@
 jdk:
-  - openjdk17
+  - openjdk9
 before_install:
-  - sdk install java 17.0.7-open
-  - sdk use java 17.0.7-open
+  - ./custom_setup.sh
+install:
+  - echo "Running a custom install command"
+  - ./gradlew clean install -xtest
+env:
+  MYVAR: "custom environment variable"
