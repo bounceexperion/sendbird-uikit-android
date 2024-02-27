@@ -4,6 +4,20 @@ plugins {
     id 'kotlinx-serialization'
     id 'kotlin-parcelize'
     id 'org.jetbrains.dokka' version "$kotlin_version"
+    id 'maven-publish'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.sendbird'
+                artifactId = 'sendbird-android-app'
+                version = '3.13.0'
+            }
+        }
+    }
 }
 
 version = UIKIT_VERSION
