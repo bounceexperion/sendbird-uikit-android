@@ -2,6 +2,7 @@ package com.sendbird.uikit.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -66,8 +67,7 @@ public class ChannelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int themeResId = getIntent().getIntExtra(StringSet.KEY_THEME_RES_ID, SendbirdUIKit.getDefaultThemeMode().getResId());
-        setTheme(themeResId);
+        setTheme(SendbirdUIKit.getDefaultThemeMode().getResId());
         setContentView(R.layout.sb_activity);
 
         Fragment fragment = createFragment();
@@ -76,6 +76,14 @@ public class ChannelActivity extends AppCompatActivity {
         manager.beginTransaction()
             .replace(R.id.sb_fragment_container, fragment)
             .commit();
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        SendbirdUIKit.setDefaultThemeMode(SendbirdUIKit.isDarkMode() ?
+            SendbirdUIKit.ThemeMode.Light : SendbirdUIKit.ThemeMode.Dark);
+        recreate();
     }
 
     /**
@@ -123,9 +131,6 @@ public class ChannelActivity extends AppCompatActivity {
         @NonNull
         private final Class<? extends ChannelActivity> customClass;
 
-        @StyleRes
-        private final int themeResId;
-
         /**
          * Create an intent for a {@link ChannelActivity}.
          *
@@ -143,26 +148,12 @@ public class ChannelActivity extends AppCompatActivity {
          * @param context A Context of the application package implementing this class.
          * @param customClass The activity class that is to be used for the intent.
          * @param channelUrl The url of the channel will be implemented.
-         * since 2.1.0
-         */
-        public IntentBuilder(@NonNull Context context, @NonNull Class<? extends ChannelActivity> customClass, @NonNull String channelUrl) {
-            this(context, customClass, channelUrl, SendbirdUIKit.getDefaultThemeMode().getResId());
-        }
-
-        /**
-         * Create an intent for a {@link ChannelActivity}.
-         *
-         * @param context A Context of the application package implementing this class.
-         * @param customClass The activity class that is to be used for the intent.
-         * @param channelUrl The url of the channel will be implemented.
-         * @param themeResId the resource identifier for custom theme.
          * since 3.5.6
          */
-        public IntentBuilder(@NonNull Context context, @NonNull Class<? extends ChannelActivity> customClass, @NonNull String channelUrl, @StyleRes int themeResId) {
+        public IntentBuilder(@NonNull Context context, @NonNull Class<? extends ChannelActivity> customClass, @NonNull String channelUrl) {
             this.context = context;
             this.channelUrl = channelUrl;
             this.customClass = customClass;
-            this.themeResId = themeResId;
         }
 
         /**
@@ -189,7 +180,6 @@ public class ChannelActivity extends AppCompatActivity {
             Intent intent = new Intent(context, customClass);
             intent.putExtra(StringSet.KEY_CHANNEL_URL, channelUrl);
             intent.putExtra(StringSet.KEY_STARTING_POINT, startingPoint);
-            intent.putExtra(StringSet.KEY_THEME_RES_ID, themeResId);
             return intent;
         }
     }
