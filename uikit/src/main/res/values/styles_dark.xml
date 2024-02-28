@@ -304,9 +304,9 @@
         <item name="sb_recycler_view_divide_margin_right">0dp</item>
     </style>
     <style name="Component.Dark.Header">
-        <item name="sb_appbar_background">@color/background_500</item>
+        <item name="sb_appbar_background">@color/primary_300</item>
         <item name="sb_appbar_title"/>
-        <item name="sb_appbar_title_appearance">@style/SendbirdH1OnDark01</item>
+        <item name="sb_appbar_title_appearance">@style/SendbirdH2OnDark01</item>
         <item name="sb_appbar_left_button_icon">@drawable/icon_arrow_left</item>
         <item name="sb_appbar_left_button_tint">@color/background_50</item>
         <item name="sb_appbar_left_button_background">@drawable/sb_button_uncontained_background_dark</item>
