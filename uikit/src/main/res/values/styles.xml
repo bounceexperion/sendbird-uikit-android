@@ -192,11 +192,11 @@
         <item name="sb_recycler_view_divide_margin_right">0dp</item>
     </style>
     <style name="Component.Header">
-        <item name="sb_appbar_background">@color/background_50</item>
+        <item name="sb_appbar_background">@color/primary_300</item>
         <item name="sb_appbar_title"/>
-        <item name="sb_appbar_title_appearance">@style/SendbirdH2OnLight01</item>
+        <item name="sb_appbar_title_appearance">@style/SendbirdH2OnDark01</item>
         <item name="sb_appbar_left_button_icon">@drawable/icon_arrow_left</item>
-        <item name="sb_appbar_left_button_tint">@color/primary_300</item>
+        <item name="sb_appbar_left_button_tint">@color/background_50</item>
         <item name="sb_appbar_left_button_background">@drawable/sb_button_uncontained_background_light</item>
         <item name="sb_appbar_divider_color">@color/onlight_04</item>
     </style>
@@ -250,7 +250,7 @@
     <style name="Component.Header.Channel">
         <item name="sb_appbar_description_appearance">@style/SendbirdCaption2OnLight02</item>
         <item name="sb_appbar_right_button_icon">@drawable/icon_info</item>
-        <item name="sb_appbar_right_button_tint">@color/primary_300</item>
+        <item name="sb_appbar_right_button_tint">@color/background_50</item>
         <item name="sb_appbar_right_button_background">@drawable/sb_button_uncontained_background_light</item>
     </style>
     <style name="Component.List.Channel">

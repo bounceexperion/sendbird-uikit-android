@@ -308,7 +308,7 @@
         <item name="sb_appbar_title"/>
         <item name="sb_appbar_title_appearance">@style/SendbirdH1OnDark01</item>
         <item name="sb_appbar_left_button_icon">@drawable/icon_arrow_left</item>
-        <item name="sb_appbar_left_button_tint">@color/primary_200</item>
+        <item name="sb_appbar_left_button_tint">@color/background_50</item>
         <item name="sb_appbar_left_button_background">@drawable/sb_button_uncontained_background_dark</item>
         <item name="sb_appbar_divider_color">@android:color/transparent</item>
     </style>
@@ -362,7 +362,7 @@
     <style name="Component.Dark.Header.Channel">
         <item name="sb_appbar_description_appearance">@style/SendbirdCaption2OnDark03</item>
         <item name="sb_appbar_right_button_icon">@drawable/icon_info</item>
-        <item name="sb_appbar_right_button_tint">@color/primary_200</item>
+        <item name="sb_appbar_right_button_tint">@color/background_50</item>
         <item name="sb_appbar_right_button_background">@drawable/sb_button_uncontained_background_dark</item>
     </style>
     <style name="Component.Dark.List.Channel">

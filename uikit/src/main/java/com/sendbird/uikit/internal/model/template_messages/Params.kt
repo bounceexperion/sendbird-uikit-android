@@ -213,8 +213,8 @@ internal data class ButtonViewParams constructor(
     val maxTextLines: Int = 1,
     val textStyle: TextStyle = TextStyle(
         color = when (SendbirdUIKit.getDefaultThemeMode()) {
-            SendbirdUIKit.ThemeMode.Light -> Color.parseColor("#742ddd")
-            SendbirdUIKit.ThemeMode.Dark -> Color.parseColor("#c2a9fa")
+            SendbirdUIKit.ThemeMode.Light -> Color.parseColor("#09A2AA")
+            SendbirdUIKit.ThemeMode.Dark -> Color.parseColor("#09A2AA")
         },
         weight = Weight.Bold
     )
