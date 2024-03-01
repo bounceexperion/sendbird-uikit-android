@@ -262,7 +262,7 @@ public class ChannelFragment extends BaseMessageListFragment<MessageListAdapter,
         if (channel == null) return;
         messageListComponent.setOnMessageClickListener(this::onMessageClicked);
         messageListComponent.setOnMessageProfileLongClickListener(this::onMessageProfileLongClicked);
-        messageListComponent.setOnMessageProfileClickListener(this::onMessageProfileClicked);
+        //messageListComponent.setOnMessageProfileClickListener(this::onMessageProfileClicked);
         messageListComponent.setOnMessageLongClickListener(this::onMessageLongClicked);
         messageListComponent.setOnMessageMentionClickListener(this::onMessageMentionClicked);
         messageListComponent.setOnEmojiReactionClickListener(emojiReactionClickListener != null ? emojiReactionClickListener : (view, position, message, reactionKey) -> toggleReaction(view, message, reactionKey));

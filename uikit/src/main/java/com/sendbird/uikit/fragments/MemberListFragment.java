@@ -140,7 +140,7 @@ public class MemberListFragment extends BaseModuleFragment<MemberListModule, Mem
         listComponent.setOnItemClickListener(itemClickListener);
         listComponent.setOnItemLongClickListener(itemLongClickListener);
         listComponent.setOnActionItemClickListener(actionItemClickListener != null ? actionItemClickListener : (view, position, member) -> onActionItemClicked(view, position, member, channel));
-        listComponent.setOnProfileClickListener(profileClickListener != null ? profileClickListener : this::onProfileClicked);
+        //listComponent.setOnProfileClickListener(profileClickListener != null ? profileClickListener : this::onProfileClicked);
         viewModel.getUserList().observe(getViewLifecycleOwner(), members -> {
             Logger.dev("++ observing result members size : %s", members.size());
             if (channel != null) {
