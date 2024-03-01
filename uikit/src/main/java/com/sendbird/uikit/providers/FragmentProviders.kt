@@ -285,6 +285,7 @@ object FragmentProviders {
         this.channelSettings = ChannelSettingsFragmentProvider { channelUrl, args ->
             ChannelSettingsFragment.Builder(channelUrl).withArguments(args)
                 .setUseHeader(true)
+                .setUseHeaderRightButton(false)
                 .build()
         }
 
@@ -325,7 +326,7 @@ object FragmentProviders {
         this.memberList = MemberListFragmentProvider { channelUrl, args ->
             MemberListFragment.Builder(channelUrl).withArguments(args)
                 .setUseHeader(true)
-                .setUseHeaderRightButton(true)
+                .setUseHeaderRightButton(false)
                 .build()
         }
 
