@@ -258,7 +258,7 @@ abstract public class UserTypeListAdapter<T extends User> extends BaseAdapter<T,
             } else if (user instanceof RestrictedUser) {
                 isMuted = ((RestrictedUser) user).getRestrictionInfo().getRestrictionType().equals(RestrictionType.MUTED);
             }
-            binding.userViewHolder.useActionMenu(isCurrentUserOperator() && actionItemClickListener != null);
+            binding.userViewHolder.useActionMenu(false);
             UserPreview.drawUser(binding.userViewHolder, user, getItemViewDescription(binding.getRoot().getContext(), user), isMuted);
         }
     }
