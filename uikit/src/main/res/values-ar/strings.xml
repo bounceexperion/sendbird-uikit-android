@@ -25,11 +25,11 @@
     <string name="sb_text_channel_message_badge_edited">&#160;(edited)</string>
     <string name="sb_text_channel_tooltip">%d new message</string>
     <string name="sb_text_channel_tooltip_with_count">%d new messages</string>
-    <string name="sb_text_channel_anchor_copy">Copy</string>
+    <string name="sb_text_channel_anchor_copy">نسخ</string>
     <string name="sb_text_channel_anchor_save">Save</string>
-    <string name="sb_text_channel_anchor_edit">Edit</string>
-    <string name="sb_text_channel_anchor_delete">Delete</string>
-    <string name="sb_text_channel_anchor_reply">Reply</string>
+    <string name="sb_text_channel_anchor_edit">تعديل</string>
+    <string name="sb_text_channel_anchor_delete">إلغاء</string>
+    <string name="sb_text_channel_anchor_reply">رد</string>
     <string name="sb_text_channel_anchor_reply_in_thread">Reply in thread</string>
     <string name="sb_text_channel_anchor_retry">Retry</string>
     <string name="sb_text_channel_input_text_hint">Enter message</string>
