@@ -10,6 +10,7 @@ import android.widget.FrameLayout
 import com.sendbird.android.message.FileMessage
 import com.sendbird.uikit.R
 import com.sendbird.uikit.databinding.SbViewVoiceMessageBinding
+import com.sendbird.uikit.internal.extensions.isVolumeMuted
 import com.sendbird.uikit.internal.extensions.setAppearance
 import com.sendbird.uikit.internal.model.VoicePlayer
 import com.sendbird.uikit.internal.model.VoicePlayerManager
@@ -117,7 +118,8 @@ internal class VoiceMessageView @JvmOverloads internal constructor(
         this@VoiceMessageView.key = key
         duration = MessageUtils.extractDuration(fileMessage)
         binding.ibtnPlay.setOnClickListener {
-            VoicePlayerManager.play(context, key, fileMessage, onUpdateListener, onProgressUpdateListener)
+            if (!isVolumeMuted(context)) VoicePlayerManager.play(context, key,
+                fileMessage, onUpdateListener, onProgressUpdateListener)
         }
         binding.ibtnPause.setOnClickListener {
             VoicePlayerManager.pause()
@@ -169,9 +171,7 @@ internal class VoiceMessageView @JvmOverloads internal constructor(
 
     fun callOnPlayerButtonClick() {
         if (binding.ibtnPlay.visibility == VISIBLE) {
-            binding.ibtnPlay.callOnClick()
-        } else if (binding.ibtnPause.visibility == VISIBLE) {
-            binding.ibtnPause.callOnClick()
-        }
+            if (!isVolumeMuted(context)) binding.ibtnPlay.callOnClick()
+        } else if (binding.ibtnPause.visibility == VISIBLE) binding.ibtnPause.callOnClick()
     }
 }

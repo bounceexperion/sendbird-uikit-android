@@ -230,4 +230,6 @@
     <string name="sb_forms_invalid_form_field">Please check the value</string>
     <string name="sb_forms_submit_failed">Submit failed</string>
     <string name="sb_forms_optional">(optional)</string>
+
+    <string name="sb_low_volume">يرجى تشغيل الصوت</string>
 </resources>
